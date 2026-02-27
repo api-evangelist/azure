@@ -1,0 +1,178 @@
+name: Microsoft Azure
+description: Microsoft Azure is a comprehensive cloud computing platform offering IaaS, PaaS, and SaaS solutions for building, deploying, and managing applications through Microsoft's global network of datacenters.
+image: https://azure.microsoft.com/svghandler/azure-logo.svg
+url: https://azure.microsoft.com
+created: '2024'
+modified: '2024'
+specificationVersion: '0.18'
+tags:
+- Cloud Computing
+- Infrastructure
+- Platform as a Service
+- Machine Learning
+- Storage
+- Databases
+- Networking
+apis:
+- name: Azure Compute API
+  description: Manage virtual machines, containers, and serverless computing resources
+  image: https://azure.microsoft.com/svghandler/virtual-machines.svg
+  humanURL: https://azure.microsoft.com/en-us/products/category/compute
+  baseURL: https://management.azure.com
+  tags:
+  - Virtual Machines
+  - Containers
+  - Kubernetes
+  - Functions
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/compute/
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/compute/resource-manager/readme.md
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/azure/active-directory/develop/
+- name: Azure Storage API
+  description: Scalable cloud storage for data objects, files, messages, and more
+  image: https://azure.microsoft.com/svghandler/storage.svg
+  humanURL: https://azure.microsoft.com/en-us/products/category/storage
+  baseURL: https://{accountName}.blob.core.windows.net
+  tags:
+  - Blob Storage
+  - File Storage
+  - Queue Storage
+  - Table Storage
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/storageservices/
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/storage/resource-manager/readme.md
+  - type: Pricing
+    url: https://azure.microsoft.com/en-us/pricing/details/storage/
+- name: Azure Cognitive Services API
+  description: Add AI capabilities including vision, speech, language, and decision-making
+  image: https://azure.microsoft.com/svghandler/cognitive-services.svg
+  humanURL: https://azure.microsoft.com/en-us/products/cognitive-services
+  baseURL: https://{region}.api.cognitive.microsoft.com
+  tags:
+  - Artificial Intelligence
+  - Computer Vision
+  - Natural Language
+  - Speech Recognition
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/cognitive-services/
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/cognitiveservices/data-plane/readme.md
+  - type: SDKs
+    url: https://learn.microsoft.com/en-us/azure/cognitive-services/cognitive-services-apis-create-account
+- name: Azure SQL Database API
+  description: Managed relational database service with built-in intelligence
+  image: https://azure.microsoft.com/svghandler/sql-database.svg
+  humanURL: https://azure.microsoft.com/en-us/products/azure-sql/database
+  baseURL: https://management.azure.com
+  tags:
+  - Database
+  - SQL
+  - Relational Database
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/sql/
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/sql/resource-manager/readme.md
+  - type: Connection Strings
+    url: https://learn.microsoft.com/en-us/azure/azure-sql/database/connect-query-content-reference-guide
+- name: Azure Cosmos DB API
+  description: Globally distributed, multi-model database service
+  image: https://azure.microsoft.com/svghandler/cosmos-db.svg
+  humanURL: https://azure.microsoft.com/en-us/products/cosmos-db
+  baseURL: https://{accountName}.documents.azure.com
+  tags:
+  - NoSQL
+  - Database
+  - Global Distribution
+  - Multi-Model
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/cosmos-db/
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/cosmos-db/resource-manager/readme.md
+  - type: SDKs
+    url: https://learn.microsoft.com/en-us/azure/cosmos-db/sdk-connection-modes
+- name: Azure Functions API
+  description: Event-driven serverless compute platform
+  image: https://azure.microsoft.com/svghandler/functions.svg
+  humanURL: https://azure.microsoft.com/en-us/products/functions
+  baseURL: https://management.azure.com
+  tags:
+  - Serverless
+  - Functions
+  - Event-Driven
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/azure-functions/functions-reference
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/web/resource-manager/readme.md
+  - type: Triggers and Bindings
+    url: https://learn.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings
+- name: Azure Container Registry API
+  description: Managed Docker registry service for storing and managing container images
+  image: https://azure.microsoft.com/svghandler/container-registry.svg
+  humanURL: https://azure.microsoft.com/en-us/products/container-registry
+  baseURL: https://{registryName}.azurecr.io
+  tags:
+  - Containers
+  - Docker
+  - Registry
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/containerregistry/
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/containerregistry/resource-manager/readme.md
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication
+- name: Azure Monitor API
+  description: Full-stack monitoring and analytics service
+  image: https://azure.microsoft.com/svghandler/monitor.svg
+  humanURL: https://azure.microsoft.com/en-us/products/monitor
+  baseURL: https://management.azure.com
+  tags:
+  - Monitoring
+  - Analytics
+  - Logging
+  - Metrics
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/monitor/
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/monitor/resource-manager/readme.md
+  - type: Query Language
+    url: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
+common:
+- type: Portal
+  url: https://portal.azure.com
+- type: Documentation
+  url: https://learn.microsoft.com/en-us/azure/
+- type: Status Page
+  url: https://status.azure.com/
+- type: Pricing
+  url: https://azure.microsoft.com/en-us/pricing/
+- type: Support
+  url: https://azure.microsoft.com/en-us/support/
+- type: Blog
+  url: https://azure.microsoft.com/en-us/blog/
+- type: GitHub
+  url: https://github.com/Azure
+- type: Terms of Service
+  url: https://azure.microsoft.com/en-us/support/legal/
+- type: Privacy Policy
+  url: https://privacy.microsoft.com/en-us/privacystatement
+- type: Service Level Agreements
+  url: https://azure.microsoft.com/en-us/support/legal/sla/
+maintainers:
+- name: Microsoft Corporation
+  email: azuresupport@microsoft.com
+  url: https://azure.microsoft.com
+contact:
+- name: Azure Support
+  url: https://azure.microsoft.com/en-us/support/
+  email: azuresupport@microsoft.com
