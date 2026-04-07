@@ -8,12 +8,12 @@ type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Cloud Computing
-  - Infrastructure
-  - Platform as a Service
-  - Machine Learning
-  - Storage
   - Databases
+  - Infrastructure
+  - Machine Learning
   - Networking
+  - Platform as a Service
+  - Storage
 url: https://raw.githubusercontent.com/api-evangelist/azure/refs/heads/main/apis.yml
 created: '2024-01-01'
 modified: '2026-03-16'
@@ -25,10 +25,10 @@ apis:
     humanURL: https://azure.microsoft.com/en-us/products/category/compute
     baseURL: https://management.azure.com
     tags:
-      - Virtual Machines
       - Containers
-      - Kubernetes
       - Functions
+      - Kubernetes
+      - Virtual Machines
     properties:
       - type: Documentation
         url: https://learn.microsoft.com/en-us/rest/api/compute/
