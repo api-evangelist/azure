@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure/refs/heads/main/json-schema/azure-generic-resource-schema.json",
+  "title": "GenericResource",
+  "description": "Resource information.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "kind": {
+      "type": "string"
+    },
+    "managedBy": {
+      "type": "string"
+    },
+    "sku": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "tier": {
+          "type": "string"
+        },
+        "capacity": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

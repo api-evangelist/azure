@@ -1,0 +1,14 @@
+{
+  "id": "example-string",
+  "name": "example-string",
+  "type": "example-string",
+  "location": "example-string",
+  "tags": {},
+  "kind": "example-string",
+  "managedBy": "example-string",
+  "sku": {
+    "name": "example-string",
+    "tier": "example-string",
+    "capacity": 1
+  }
+}

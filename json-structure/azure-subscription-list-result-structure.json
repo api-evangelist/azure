@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure/refs/heads/main/json-structure/azure-subscription-list-result-structure.json",
+  "description": "SubscriptionListResult schema from Microsoft Azure API",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Subscription"
+      }
+    },
+    "nextLink": {
+      "type": "string"
+    }
+  },
+  "name": "SubscriptionListResult"
+}

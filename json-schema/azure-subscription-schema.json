@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure/refs/heads/main/json-schema/azure-subscription-schema.json",
+  "title": "Subscription",
+  "description": "Subscription information.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true
+    },
+    "subscriptionId": {
+      "type": "string",
+      "readOnly": true
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "Enabled",
+        "Disabled",
+        "Deleted",
+        "PastDue",
+        "Warned"
+      ]
+    },
+    "subscriptionPolicies": {
+      "type": "object",
+      "properties": {
+        "locationPlacementId": {
+          "type": "string"
+        },
+        "quotaId": {
+          "type": "string"
+        },
+        "spendingLimit": {
+          "type": "string",
+          "enum": [
+            "On",
+            "Off",
+            "CurrentPeriodOff"
+          ]
+        }
+      }
+    },
+    "authorizationSource": {
+      "type": "string"
+    },
+    "managedByTenants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "tenantId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

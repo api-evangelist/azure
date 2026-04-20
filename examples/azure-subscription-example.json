@@ -1,0 +1,17 @@
+{
+  "id": "example-string",
+  "subscriptionId": "example-string",
+  "displayName": "example-string",
+  "state": "Enabled",
+  "subscriptionPolicies": {
+    "locationPlacementId": "example-string",
+    "quotaId": "example-string",
+    "spendingLimit": "On"
+  },
+  "authorizationSource": "example-string",
+  "managedByTenants": [
+    {
+      "tenantId": {}
+    }
+  ]
+}

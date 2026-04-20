@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure/refs/heads/main/json-schema/azure-resource-list-result-schema.json",
+  "title": "ResourceListResult",
+  "description": "ResourceListResult schema from Microsoft Azure API",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/GenericResource"
+      }
+    },
+    "nextLink": {
+      "type": "string"
+    }
+  }
+}

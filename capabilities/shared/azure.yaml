@@ -1,0 +1,168 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Microsoft Azure"
+  description: "Microsoft Azure REST API for Azure resource management."
+  tags:
+    - Azure
+    - Cloud
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      AZURE_SUBSCRIPTION_ID: AZURE_SUBSCRIPTION_ID
+      AZURE_ACCESS_TOKEN: AZURE_ACCESS_TOKEN
+
+capability:
+  consumes:
+    - type: http
+      namespace: azure
+      baseUri: https://management.azure.com
+      description: "Microsoft Azure REST API"
+      authentication:
+        type: bearer
+        token: "{{AZURE_ACCESS_TOKEN}}"
+      resources:
+        - name: subscription
+          path: /subscriptions/{subscriptionId}/providers/Microsoft.Subscription/Subscriptions
+          description: "Manage Subscription resources"
+          operations:
+            - name: list-subscriptions
+              method: GET
+              description: "List all Subscription resources"
+              inputParameters:
+                - name: subscriptionId
+                  in: path
+                  type: string
+                  required: true
+                  description: "Azure subscription ID"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: resource-group
+          path: /subscriptions/{subscriptionId}/providers/Microsoft.ResourceGroup/ResourceGroups
+          description: "Manage ResourceGroup resources"
+          operations:
+            - name: list-resource-groups
+              method: GET
+              description: "List all ResourceGroup resources"
+              inputParameters:
+                - name: subscriptionId
+                  in: path
+                  type: string
+                  required: true
+                  description: "Azure subscription ID"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: resource
+          path: /subscriptions/{subscriptionId}/providers/Microsoft.Resource/Resources
+          description: "Manage Resource resources"
+          operations:
+            - name: list-resources
+              method: GET
+              description: "List all Resource resources"
+              inputParameters:
+                - name: subscriptionId
+                  in: path
+                  type: string
+                  required: true
+                  description: "Azure subscription ID"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: provider
+          path: /subscriptions/{subscriptionId}/providers/Microsoft.Provider/Providers
+          description: "Manage Provider resources"
+          operations:
+            - name: list-providers
+              method: GET
+              description: "List all Provider resources"
+              inputParameters:
+                - name: subscriptionId
+                  in: path
+                  type: string
+                  required: true
+                  description: "Azure subscription ID"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      port: 8164
+      namespace: azure-api
+      resources:
+        - path: /v1/resources
+          name: resources
+          description: "Resource management"
+          operations:
+            - method: GET
+              name: list-resources
+              description: "List resources"
+              call: "azure.list-subscriptions"
+              with:
+                subscriptionId: "rest.subscriptionId"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9164
+      namespace: azure-mcp
+      transport: http
+      tools:
+        - name: list-subscriptions
+          description: "List Subscription resources in Azure"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "azure.list-subscriptions"
+          with:
+            subscriptionId: "tools.subscriptionId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-resource-groups
+          description: "List ResourceGroup resources in Azure"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "azure.list-resource-groups"
+          with:
+            subscriptionId: "tools.subscriptionId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-resources
+          description: "List Resource resources in Azure"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "azure.list-resources"
+          with:
+            subscriptionId: "tools.subscriptionId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-providers
+          description: "List Provider resources in Azure"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "azure.list-providers"
+          with:
+            subscriptionId: "tools.subscriptionId"
+          outputParameters:
+            - type: object
+              mapping: "$."

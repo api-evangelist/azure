@@ -1,0 +1,93 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Microsoft Azure Management"
+  description: "Workflow capability for managing Microsoft Azure resources. Used by cloud engineers and DevOps teams."
+  tags:
+    - Azure
+    - Cloud
+    - Management
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      AZURE_SUBSCRIPTION_ID: AZURE_SUBSCRIPTION_ID
+      AZURE_ACCESS_TOKEN: AZURE_ACCESS_TOKEN
+
+capability:
+  consumes:
+    - import: azure
+      location: ./shared/azure.yaml
+
+  exposes:
+    - type: rest
+      port: 8084
+      namespace: azure-management-api
+      description: "Unified REST API for Microsoft Azure management."
+      resources:
+        - path: /v1/resources
+          name: resources
+          description: "Resource management"
+          operations:
+            - method: GET
+              name: list
+              description: "List all resources"
+              call: "azure.list-subscriptions"
+              with:
+                subscriptionId: "rest.subscriptionId"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9094
+      namespace: azure-management-mcp
+      transport: http
+      description: "MCP server for AI-assisted Microsoft Azure management."
+      tools:
+        - name: list-subscriptions
+          description: "List Subscription resources"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "azure.list-subscriptions"
+          with:
+            subscriptionId: "tools.subscriptionId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-resource-groups
+          description: "List ResourceGroup resources"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "azure.list-resource-groups"
+          with:
+            subscriptionId: "tools.subscriptionId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-resources
+          description: "List Resource resources"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "azure.list-resources"
+          with:
+            subscriptionId: "tools.subscriptionId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-providers
+          description: "List Provider resources"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "azure.list-providers"
+          with:
+            subscriptionId: "tools.subscriptionId"
+          outputParameters:
+            - type: object
+              mapping: "$."

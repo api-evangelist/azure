@@ -1,162 +1,83 @@
 # Microsoft Azure (azure)
-Microsoft Azure is a comprehensive cloud computing platform offering IaaS, PaaS, and SaaS solutions for building, deploying, and managing applications through Microsoft's global network of datacenters.
+Microsoft Azure is a comprehensive cloud computing platform offering IaaS, PaaS, and SaaS solutions through a global network of datacenters with REST APIs for all services.
 
-**URL:** [Visit APIs.json URL](https://azure.microsoft.com)
+**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/azure/refs/heads/main/apis.yml)
+
+**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
 
 ## Tags:
 
- - Cloud Computing, Infrastructure, Platform as a Service, Machine Learning, Storage, Databases, Networking
+ - Cloud Computing, Databases, Infrastructure, Machine Learning, Networking, Platform as a Service, Storage
 
 ## Timestamps
 
-- **Created:** 2024 
-- **Modified:** 2024 
+- **Created:** 2024-01-01
+- **Modified:** 2026-04-19
 
 ## APIs
 
-### Azure Compute API
-Manage virtual machines, containers, and serverless computing resources
+### Microsoft Azure
+Microsoft Azure is a comprehensive cloud computing platform offering IaaS, PaaS, and SaaS solutions through a global network of datacenters with REST APIs for all services.
 
-**Human URL:** [https://azure.microsoft.com/en-us/products/category/compute](https://azure.microsoft.com/en-us/products/category/compute)
-
-
-#### Tags:
-
- - Virtual Machines, Containers, Kubernetes, Functions
-
-#### Properties
-
-- [Documentation](https://learn.microsoft.com/en-us/rest/api/compute/)
-- [OpenAPI](https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/compute/resource-manager/readme.md)
-- [Authentication](https://learn.microsoft.com/en-us/azure/active-directory/develop/)
-
-### Azure Storage API
-Scalable cloud storage for data objects, files, messages, and more
-
-**Human URL:** [https://azure.microsoft.com/en-us/products/category/storage](https://azure.microsoft.com/en-us/products/category/storage)
-
+**Human URL:** [https://learn.microsoft.com/en-us/rest/api/azure/](https://learn.microsoft.com/en-us/rest/api/azure/)
 
 #### Tags:
 
- - Blob Storage, File Storage, Queue Storage, Table Storage
+ - Management, Resources, Subscriptions
 
 #### Properties
 
-- [Documentation](https://learn.microsoft.com/en-us/rest/api/storageservices/)
-- [OpenAPI](https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/storage/resource-manager/readme.md)
-- [Pricing](https://azure.microsoft.com/en-us/pricing/details/storage/)
-
-### Azure Cognitive Services API
-Add AI capabilities including vision, speech, language, and decision-making
-
-**Human URL:** [https://azure.microsoft.com/en-us/products/cognitive-services](https://azure.microsoft.com/en-us/products/cognitive-services)
-
-
-#### Tags:
-
- - Artificial Intelligence, Computer Vision, Natural Language, Speech Recognition
-
-#### Properties
-
-- [Documentation](https://learn.microsoft.com/en-us/azure/cognitive-services/)
-- [OpenAPI](https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/cognitiveservices/data-plane/readme.md)
-- [SDKs](https://learn.microsoft.com/en-us/azure/cognitive-services/cognitive-services-apis-create-account)
-
-### Azure SQL Database API
-Managed relational database service with built-in intelligence
-
-**Human URL:** [https://azure.microsoft.com/en-us/products/azure-sql/database](https://azure.microsoft.com/en-us/products/azure-sql/database)
-
-
-#### Tags:
-
- - Database, SQL, Relational Database
-
-#### Properties
-
-- [Documentation](https://learn.microsoft.com/en-us/rest/api/sql/)
-- [OpenAPI](https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/sql/resource-manager/readme.md)
-- [Connection Strings](https://learn.microsoft.com/en-us/azure/azure-sql/database/connect-query-content-reference-guide)
-
-### Azure Cosmos DB API
-Globally distributed, multi-model database service
-
-**Human URL:** [https://azure.microsoft.com/en-us/products/cosmos-db](https://azure.microsoft.com/en-us/products/cosmos-db)
-
-
-#### Tags:
-
- - NoSQL, Database, Global Distribution, Multi-Model
-
-#### Properties
-
-- [Documentation](https://learn.microsoft.com/en-us/rest/api/cosmos-db/)
-- [OpenAPI](https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/cosmos-db/resource-manager/readme.md)
-- [SDKs](https://learn.microsoft.com/en-us/azure/cosmos-db/sdk-connection-modes)
-
-### Azure Functions API
-Event-driven serverless compute platform
-
-**Human URL:** [https://azure.microsoft.com/en-us/products/functions](https://azure.microsoft.com/en-us/products/functions)
-
-
-#### Tags:
-
- - Serverless, Functions, Event-Driven
-
-#### Properties
-
-- [Documentation](https://learn.microsoft.com/en-us/azure/azure-functions/functions-reference)
-- [OpenAPI](https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/web/resource-manager/readme.md)
-- [Triggers and Bindings](https://learn.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings)
-
-### Azure Container Registry API
-Managed Docker registry service for storing and managing container images
-
-**Human URL:** [https://azure.microsoft.com/en-us/products/container-registry](https://azure.microsoft.com/en-us/products/container-registry)
-
-
-#### Tags:
-
- - Containers, Docker, Registry
-
-#### Properties
-
-- [Documentation](https://learn.microsoft.com/en-us/rest/api/containerregistry/)
-- [OpenAPI](https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/containerregistry/resource-manager/readme.md)
-- [Authentication](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication)
-
-### Azure Monitor API
-Full-stack monitoring and analytics service
-
-**Human URL:** [https://azure.microsoft.com/en-us/products/monitor](https://azure.microsoft.com/en-us/products/monitor)
-
-
-#### Tags:
-
- - Monitoring, Analytics, Logging, Metrics
-
-#### Properties
-
-- [Documentation](https://learn.microsoft.com/en-us/rest/api/monitor/)
-- [OpenAPI](https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/monitor/resource-manager/readme.md)
-- [Query Language](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview)
+- [Documentation](https://learn.microsoft.com/en-us/rest/api/azure/)
+- [OpenAPI](openapi/azure-management-openapi.yaml)
 
 ## Common Properties
 
-- [Portal](https://portal.azure.com)
-- [Documentation](https://learn.microsoft.com/en-us/azure/)
-- [Status Page](https://status.azure.com/)
-- [Pricing](https://azure.microsoft.com/en-us/pricing/)
-- [Support](https://azure.microsoft.com/en-us/support/)
-- [Blog](https://azure.microsoft.com/en-us/blog/)
-- [GitHub](https://github.com/Azure)
-- [Terms of Service](https://azure.microsoft.com/en-us/support/legal/)
-- [Privacy Policy](https://privacy.microsoft.com/en-us/privacystatement)
-- [Service Level Agreements](https://azure.microsoft.com/en-us/support/legal/sla/)
+
+## Artifacts
+
+Machine-readable API specifications organized by format.
+
+### OpenAPI
+
+- [Management](openapi/azure-management-openapi.yaml)
+
+### JSON Schema
+
+- [Subscription List Result](json-schema/azure-subscription-list-result-schema.json)
+- [Resource Group](json-schema/azure-resource-group-schema.json)
+- [Generic Resource](json-schema/azure-generic-resource-schema.json)
+- [Resource List Result](json-schema/azure-resource-list-result-schema.json)
+- [Subscription](json-schema/azure-subscription-schema.json)
+- [Resource Group List Result](json-schema/azure-resource-group-list-result-schema.json)
+
+### JSON-LD
+
+- [Azure Context](json-ld/azure-context.jsonld)
+
+## Capabilities
+
+Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
+
+### Shared Per-API Definitions
+
+- [Azure](capabilities/shared/azure.yaml)
+
+### Workflow Capabilities
+
+| Workflow | APIs Combined | Tools | Persona |
+|----------|--------------|-------|----------|
+| [Azure Management](capabilities/azure-management.yaml) | Microsoft Azure | 5 | Cloud Engineer |
+
+## Vocabulary
+
+- [Azure Vocabulary](vocabulary/azure-vocabulary.yaml)
+
+## Rules
+
+- [Azure Spectral Rules](rules/azure-spectral-rules.yml) — 15 rules enforcing Microsoft Azure API conventions
 
 ## Maintainers
 
-**FN:** Microsoft Corporation
+**FN:** Kin Lane
 
-**Email:** azuresupport@microsoft.com
+**Email:** kin@apievangelist.com

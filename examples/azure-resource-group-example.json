@@ -1,0 +1,10 @@
+{
+  "id": "example-string",
+  "name": "example-string",
+  "type": "example-string",
+  "location": "example-string",
+  "tags": {},
+  "properties": {
+    "provisioningState": "example-string"
+  }
+}

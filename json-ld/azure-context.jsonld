@@ -1,0 +1,82 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "azure": "https://azure.microsoft.com/azure/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Subscription": "azure:Subscription",
+    "SubscriptionListResult": "azure:SubscriptionListResult",
+    "ResourceGroup": "azure:ResourceGroup",
+    "ResourceGroupListResult": "azure:ResourceGroupListResult",
+    "GenericResource": "azure:GenericResource",
+    "ResourceListResult": "azure:ResourceListResult",
+    "id": {
+      "@id": "azure:id",
+      "@type": "xsd:string"
+    },
+    "subscriptionId": {
+      "@id": "azure:subscriptionId",
+      "@type": "xsd:string"
+    },
+    "displayName": {
+      "@id": "azure:displayName",
+      "@type": "xsd:string"
+    },
+    "state": {
+      "@id": "azure:state",
+      "@type": "xsd:string"
+    },
+    "subscriptionPolicies": {
+      "@id": "azure:subscriptionPolicies",
+      "@type": "@id"
+    },
+    "authorizationSource": {
+      "@id": "azure:authorizationSource",
+      "@type": "xsd:string"
+    },
+    "managedByTenants": {
+      "@id": "azure:managedByTenants",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "azure:value",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "nextLink": {
+      "@id": "azure:nextLink",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "type": {
+      "@id": "azure:type",
+      "@type": "xsd:string"
+    },
+    "location": {
+      "@id": "azure:location",
+      "@type": "xsd:string"
+    },
+    "tags": {
+      "@id": "azure:tags",
+      "@type": "@id"
+    },
+    "properties": {
+      "@id": "azure:properties",
+      "@type": "@id"
+    },
+    "kind": {
+      "@id": "azure:kind",
+      "@type": "xsd:string"
+    },
+    "managedBy": {
+      "@id": "azure:managedBy",
+      "@type": "xsd:string"
+    },
+    "sku": {
+      "@id": "azure:sku",
+      "@type": "@id"
+    }
+  }
+}
