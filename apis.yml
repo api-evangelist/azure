@@ -67,19 +67,19 @@ common:
   url: https://portal.azure.com
 - type: Documentation
   url: https://learn.microsoft.com/en-us/azure/
-- type: Status
+- type: StatusPage
   url: https://status.azure.com/
 - type: Support
   url: https://azure.microsoft.com/en-us/support/
 - type: Blog
   url: https://azure.microsoft.com/en-us/blog/
-- type: GitHub Organization
+- type: GitHubOrganization
   url: https://github.com/Azure
-- type: Terms of Service
+- type: TermsOfService
   url: https://azure.microsoft.com/en-us/support/legal/
-- type: Privacy Policy
+- type: PrivacyPolicy
   url: https://privacy.microsoft.com/en-us/privacystatement
-- type: Sign Up
+- type: SignUp
   url: https://azure.microsoft.com/en-us/free/
 - type: SpectralRules
   url: https://raw.githubusercontent.com/api-evangelist/azure/refs/heads/main/rules/azure-spectral-rules.yml
