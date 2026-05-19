@@ -1,0 +1,85 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Microsoft Azure Management API — Resources
+  description: 'Microsoft Azure Management API — Resources. 1 operations. Lead operation: Microsoft Azure Azure Management
+    List Resources by Subscription. Self-contained Naftiko capability covering one Azure business surface.'
+  tags:
+  - Azure
+  - Resources
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AZURE_API_KEY: AZURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: management-resources
+    baseUri: https://management.azure.com
+    description: Microsoft Azure Management API — Resources business capability. Self-contained, no shared references.
+    resources:
+    - name: subscriptions-subscriptionId-resources
+      path: /subscriptions/{subscriptionId}/resources
+      operations:
+      - name: resourceslistbysubscription
+        method: GET
+        description: Microsoft Azure Azure Management List Resources by Subscription
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: subscriptionId
+          in: path
+          type: string
+          required: true
+        - name: api-version
+          in: query
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.AZURE_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: management-resources-rest
+    port: 8080
+    description: REST adapter for Microsoft Azure Management API — Resources. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/subscriptions/{subscriptionid}/resources
+      name: subscriptions-subscriptionid-resources
+      description: REST surface for subscriptions-subscriptionId-resources.
+      operations:
+      - method: GET
+        name: resourceslistbysubscription
+        description: Microsoft Azure Azure Management List Resources by Subscription
+        call: management-resources.resourceslistbysubscription
+        with:
+          subscriptionId: rest.subscriptionId
+          api-version: rest.api-version
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: management-resources-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Microsoft Azure Management API — Resources. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: microsoft-azure-azure-management-list
+      description: Microsoft Azure Azure Management List Resources by Subscription
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: management-resources.resourceslistbysubscription
+      with:
+        subscriptionId: tools.subscriptionId
+        api-version: tools.api-version
+      outputParameters:
+      - type: object
+        mapping: $.

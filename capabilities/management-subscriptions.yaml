@@ -1,0 +1,126 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Microsoft Azure Management API — Subscriptions
+  description: 'Microsoft Azure Management API — Subscriptions. 2 operations. Lead operation: Microsoft Azure Azure Management
+    List Subscriptions. Self-contained Naftiko capability covering one Azure business surface.'
+  tags:
+  - Azure
+  - Subscriptions
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AZURE_API_KEY: AZURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: management-subscriptions
+    baseUri: https://management.azure.com
+    description: Microsoft Azure Management API — Subscriptions business capability. Self-contained, no shared references.
+    resources:
+    - name: subscriptions
+      path: /subscriptions
+      operations:
+      - name: subscriptionslist
+        method: GET
+        description: Microsoft Azure Azure Management List Subscriptions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: api-version
+          in: query
+          type: string
+          required: true
+    - name: subscriptions-subscriptionId
+      path: /subscriptions/{subscriptionId}
+      operations:
+      - name: subscriptionsget
+        method: GET
+        description: Microsoft Azure Azure Management Get Subscription Details
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: subscriptionId
+          in: path
+          type: string
+          required: true
+        - name: api-version
+          in: query
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.AZURE_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: management-subscriptions-rest
+    port: 8080
+    description: REST adapter for Microsoft Azure Management API — Subscriptions. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/subscriptions
+      name: subscriptions
+      description: REST surface for subscriptions.
+      operations:
+      - method: GET
+        name: subscriptionslist
+        description: Microsoft Azure Azure Management List Subscriptions
+        call: management-subscriptions.subscriptionslist
+        with:
+          api-version: rest.api-version
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}
+      name: subscriptions-subscriptionid
+      description: REST surface for subscriptions-subscriptionId.
+      operations:
+      - method: GET
+        name: subscriptionsget
+        description: Microsoft Azure Azure Management Get Subscription Details
+        call: management-subscriptions.subscriptionsget
+        with:
+          subscriptionId: rest.subscriptionId
+          api-version: rest.api-version
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: management-subscriptions-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Microsoft Azure Management API — Subscriptions. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: microsoft-azure-azure-management-list
+      description: Microsoft Azure Azure Management List Subscriptions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: management-subscriptions.subscriptionslist
+      with:
+        api-version: tools.api-version
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: microsoft-azure-azure-management-get
+      description: Microsoft Azure Azure Management Get Subscription Details
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: management-subscriptions.subscriptionsget
+      with:
+        subscriptionId: tools.subscriptionId
+        api-version: tools.api-version
+      outputParameters:
+      - type: object
+        mapping: $.
