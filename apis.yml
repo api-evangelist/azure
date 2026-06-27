@@ -32,11 +32,11 @@ apis:
     url: https://learn.microsoft.com/en-us/rest/api/compute/
   - type: OpenAPI
     url: https://raw.githubusercontent.com/api-evangelist/azure/refs/heads/main/openapi/azure-management-openapi.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/management-resource-groups.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/management-resources.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/management-subscriptions.yaml
 - aid: azure:azure-storage-api
   name: Azure Storage API
@@ -85,7 +85,7 @@ common:
   url: https://azure.microsoft.com/en-us/support/legal/
 - type: PrivacyPolicy
   url: https://privacy.microsoft.com/en-us/privacystatement
-- type: SignUp
+- type: Signup
   url: https://azure.microsoft.com/en-us/free/
 - type: SpectralRules
   url: https://raw.githubusercontent.com/api-evangelist/azure/refs/heads/main/rules/azure-spectral-rules.yml
@@ -98,7 +98,7 @@ common:
   type: MCPServer
 - name: Agent Skills
   url: https://github.com/Azure/amg-skills
-  type: AgentSkill
+  type: AgentSkills
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
