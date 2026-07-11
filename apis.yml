@@ -67,6 +67,8 @@ apis:
   - type: OpenAPI
     url: https://raw.githubusercontent.com/api-evangelist/azure/refs/heads/main/openapi/azure-management-openapi.yaml
 common:
+- type: OAuthScopes
+  url: scopes/azure-scopes.yml
 - type: LinkedIn
   url: https://www.linkedin.com/showcase/microsoft-azure
 - type: Portal
