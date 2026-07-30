@@ -3,7 +3,20 @@ name: Microsoft Azure
 description: Microsoft Azure is a comprehensive cloud computing platform offering IaaS, PaaS, and SaaS solutions for building,
   deploying, and managing applications through Microsoft's global network of datacenters.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/azure.png
 tags:
 - Cloud Computing
 - Databases
@@ -17,56 +30,75 @@ created: '2024-01-01'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: azure:azure-compute-api
-  name: Azure Compute API
-  description: Manage virtual machines, containers, and serverless computing resources.
+- aid: azure:azure-resource-groups-api
+  name: Microsoft Azure Resource Groups API
+  description: Manage Azure resource groups
   humanURL: https://azure.microsoft.com/en-us/products/category/compute
   baseURL: https://management.azure.com
   tags:
-  - Containers
-  - Functions
-  - Kubernetes
-  - Virtual Machines
+  - Resource Groups
   properties:
+  - type: OpenAPI
+    url: openapi/azure-resource-groups-api-openapi.yml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/compute/
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/azure/refs/heads/main/openapi/azure-management-openapi.yaml
   - type: X-NaftikoCapability
     url: capabilities/management-resource-groups.yaml
   - type: X-NaftikoCapability
     url: capabilities/management-resources.yaml
   - type: X-NaftikoCapability
     url: capabilities/management-subscriptions.yaml
-- aid: azure:azure-storage-api
-  name: Azure Storage API
-  description: Scalable cloud storage for data objects, files, messages, and more.
-  humanURL: https://azure.microsoft.com/en-us/products/category/storage
-  baseURL: https://management.azure.com
-  tags:
-  - Blob Storage
-  - File Storage
-  - Queue Storage
-  properties:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/storageservices/
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/azure/refs/heads/main/openapi/azure-management-openapi.yaml
-- aid: azure:azure-cognitive-services-api
-  name: Azure Cognitive Services API
-  description: Add AI capabilities including vision, speech, language, and decision-making.
-  humanURL: https://azure.microsoft.com/en-us/products/cognitive-services
-  baseURL: https://{region}.api.cognitive.microsoft.com
-  tags:
-  - Artificial Intelligence
-  - Computer Vision
-  - Natural Language
-  properties:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/azure/cognitive-services/
+- aid: azure:azure-resources-api
+  name: Microsoft Azure Resources API
+  description: Manage Azure resources
+  humanURL: https://azure.microsoft.com/en-us/products/category/compute
+  baseURL: https://management.azure.com
+  tags:
+  - Resources
+  properties:
   - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/azure/refs/heads/main/openapi/azure-management-openapi.yaml
+    url: openapi/azure-resources-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/compute/
+  - type: X-NaftikoCapability
+    url: capabilities/management-resource-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/management-resources.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/management-subscriptions.yaml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/storageservices/
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/cognitive-services/
+- aid: azure:azure-subscriptions-api
+  name: Microsoft Azure Subscriptions API
+  description: Manage Azure subscriptions
+  humanURL: https://azure.microsoft.com/en-us/products/category/compute
+  baseURL: https://management.azure.com
+  tags:
+  - Subscriptions
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-subscriptions-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/compute/
+  - type: X-NaftikoCapability
+    url: capabilities/management-resource-groups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/management-resources.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/management-subscriptions.yaml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/storageservices/
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/cognitive-services/
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/microsoft-azure/overview
 - type: AgenticAccess
   url: agentic-access/azure-agentic-access.yml
 - type: DomainSecurity
