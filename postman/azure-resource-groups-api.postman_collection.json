@@ -1,0 +1,388 @@
+{
+  "info": {
+    "_postman_id": "fc19a434-c41f-4743-aa1e-394706a3de8f",
+    "name": "Microsoft Azure Management Resource Groups API",
+    "description": "Core Microsoft Azure Resource Manager REST API for subscription, resource group, and resource management across all Azure services.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:19:28.000Z",
+    "updatedAt": "2026-07-28T01:19:28.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-fc19a434-c41f-4743-aa1e-394706a3de8f"
+  },
+  "item": [
+    {
+      "name": "subscriptions",
+      "item": [
+        {
+          "name": "{subscriptionId}",
+          "item": [
+            {
+              "name": "resourceGroups",
+              "item": [
+                {
+                  "name": "Microsoft Azure Azure Management List Resource Groups",
+                  "id": "cf34c426-fe72-411f-82c3-a11dbfbcff2a",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups?api-version=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "subscriptions",
+                        ":subscriptionId",
+                        "resourceGroups"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "04b2fa5c-e2c0-40dd-9c8b-b5edb20081a0",
+                          "key": "subscriptionId",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Gets all the resource groups for a subscription."
+                  },
+                  "response": [
+                    {
+                      "id": "d2449894-b8c8-423f-b849-d309bf850b7c",
+                      "name": "List of resource groups",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups?api-version=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "subscriptions",
+                            ":subscriptionId",
+                            "resourceGroups"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "subscriptionId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"location\": \"<string>\",\n      \"tags\": {\n        \"quisc\": \"<string>\"\n      },\n      \"properties\": {\n        \"provisioningState\": \"<string>\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"location\": \"<string>\",\n      \"tags\": {\n        \"nisi_8\": \"<string>\"\n      },\n      \"properties\": {\n        \"provisioningState\": \"<string>\"\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T01:19:29.000Z",
+                      "updatedAt": "2026-07-28T01:19:29.000Z",
+                      "uid": "35240-d2449894-b8c8-423f-b849-d309bf850b7c"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:19:29.000Z",
+                  "updatedAt": "2026-07-28T01:19:29.000Z",
+                  "uid": "35240-cf34c426-fe72-411f-82c3-a11dbfbcff2a"
+                },
+                {
+                  "name": "Microsoft Azure Azure Management Create or Update Resource Group",
+                  "id": "41d84ac4-4c85-4f16-9887-a59d2d9cb88e",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"velit8\": \"<string>\"\n  },\n  \"properties\": {\n    \"provisioningState\": \"<string>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups?resourceGroupName=<string>&api-version=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "subscriptions",
+                        ":subscriptionId",
+                        "resourceGroups"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "resourceGroupName",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "410011b1-e799-4600-899e-67068e138299",
+                          "key": "subscriptionId",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Creates or updates a resource group."
+                  },
+                  "response": [
+                    {
+                      "id": "d164e0ad-84e8-4d94-b35c-39e3c6d03108",
+                      "name": "Resource group updated",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"velit8\": \"<string>\"\n  },\n  \"properties\": {\n    \"provisioningState\": \"<string>\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups?resourceGroupName=<string>&api-version=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "subscriptions",
+                            ":subscriptionId",
+                            "resourceGroups"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "resourceGroupName",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "subscriptionId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"velit8\": \"<string>\"\n  },\n  \"properties\": {\n    \"provisioningState\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T01:19:29.000Z",
+                      "updatedAt": "2026-07-28T01:19:29.000Z",
+                      "uid": "35240-d164e0ad-84e8-4d94-b35c-39e3c6d03108"
+                    },
+                    {
+                      "id": "2a040b08-868c-4201-841a-43bf23a41dad",
+                      "name": "Resource group created",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"velit8\": \"<string>\"\n  },\n  \"properties\": {\n    \"provisioningState\": \"<string>\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups?resourceGroupName=<string>&api-version=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "subscriptions",
+                            ":subscriptionId",
+                            "resourceGroups"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "resourceGroupName",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "subscriptionId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"velit8\": \"<string>\"\n  },\n  \"properties\": {\n    \"provisioningState\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T01:19:29.000Z",
+                      "updatedAt": "2026-07-28T01:19:29.000Z",
+                      "uid": "35240-2a040b08-868c-4201-841a-43bf23a41dad"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:19:29.000Z",
+                  "updatedAt": "2026-07-28T01:19:29.000Z",
+                  "uid": "35240-41d84ac4-4c85-4f16-9887-a59d2d9cb88e"
+                }
+              ],
+              "id": "f978fcdf-843b-43aa-b84b-272ec8415077",
+              "createdAt": "2026-07-28T01:19:29.000Z",
+              "updatedAt": "2026-07-28T01:19:29.000Z",
+              "uid": "35240-f978fcdf-843b-43aa-b84b-272ec8415077"
+            }
+          ],
+          "id": "5089c0c3-c5d2-4d60-8ba9-a66986d01460",
+          "createdAt": "2026-07-28T01:19:29.000Z",
+          "updatedAt": "2026-07-28T01:19:29.000Z",
+          "uid": "35240-5089c0c3-c5d2-4d60-8ba9-a66986d01460"
+        }
+      ],
+      "id": "09e7dccd-b3b1-4b60-b958-97afb5a0c9ab",
+      "createdAt": "2026-07-28T01:19:29.000Z",
+      "updatedAt": "2026-07-28T01:19:29.000Z",
+      "uid": "35240-09e7dccd-b3b1-4b60-b958-97afb5a0c9ab"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://management.azure.com"
+    }
+  ]
+}

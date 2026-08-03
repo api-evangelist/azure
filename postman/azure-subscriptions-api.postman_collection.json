@@ -1,0 +1,247 @@
+{
+  "info": {
+    "_postman_id": "ac97c6ce-d226-4c67-959c-6d85ad4d1f00",
+    "name": "Microsoft Azure Management Resource Groups Subscriptions API",
+    "description": "Core Microsoft Azure Resource Manager REST API for subscription, resource group, and resource management across all Azure services.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:19:30.000Z",
+    "updatedAt": "2026-07-28T01:19:30.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-ac97c6ce-d226-4c67-959c-6d85ad4d1f00"
+  },
+  "item": [
+    {
+      "name": "subscriptions",
+      "item": [
+        {
+          "name": "{subscriptionId}",
+          "item": [
+            {
+              "name": "Microsoft Azure Azure Management Get Subscription Details",
+              "id": "8ffaa222-32a4-45b5-9a23-daacde9ce5ec",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId?api-version=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "85b42cd6-f7f8-4080-baab-c997c26270a3",
+                      "key": "subscriptionId",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "description": "Gets details about a specified subscription."
+              },
+              "response": [
+                {
+                  "id": "d9c1e05f-85dc-41c5-9072-7f4b30288009",
+                  "name": "Subscription details",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId?api-version=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "subscriptions",
+                        ":subscriptionId"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "subscriptionId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"subscriptionId\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"state\": \"Disabled\",\n  \"subscriptionPolicies\": {\n    \"locationPlacementId\": \"<string>\",\n    \"quotaId\": \"<string>\",\n    \"spendingLimit\": \"false\"\n  },\n  \"authorizationSource\": \"<string>\",\n  \"managedByTenants\": [\n    {\n      \"tenantId\": \"<string>\"\n    },\n    {\n      \"tenantId\": \"<string>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T01:19:30.000Z",
+                  "updatedAt": "2026-07-28T01:19:30.000Z",
+                  "uid": "35240-d9c1e05f-85dc-41c5-9072-7f4b30288009"
+                }
+              ],
+              "createdAt": "2026-07-28T01:19:30.000Z",
+              "updatedAt": "2026-07-28T01:19:30.000Z",
+              "uid": "35240-8ffaa222-32a4-45b5-9a23-daacde9ce5ec"
+            }
+          ],
+          "id": "d6e6b84f-3b57-4f54-871f-289d3130d5b2",
+          "createdAt": "2026-07-28T01:19:30.000Z",
+          "updatedAt": "2026-07-28T01:19:30.000Z",
+          "uid": "35240-d6e6b84f-3b57-4f54-871f-289d3130d5b2"
+        },
+        {
+          "name": "Microsoft Azure Azure Management List Subscriptions",
+          "id": "36a3073f-e4b1-45a4-bb7b-4ca5f31f69e3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/subscriptions?api-version=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "subscriptions"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "api-version",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Gets all subscriptions for a tenant."
+          },
+          "response": [
+            {
+              "id": "3b98d1b9-8e78-423b-b3b2-f6e27ddd9115",
+              "name": "List of subscriptions",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/subscriptions?api-version=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "subscriptions"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"subscriptionId\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"state\": \"Deleted\",\n      \"subscriptionPolicies\": {\n        \"locationPlacementId\": \"<string>\",\n        \"quotaId\": \"<string>\",\n        \"spendingLimit\": \"CurrentPeriodOff\"\n      },\n      \"authorizationSource\": \"<string>\",\n      \"managedByTenants\": [\n        {\n          \"tenantId\": \"<string>\"\n        },\n        {\n          \"tenantId\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"subscriptionId\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"state\": \"Enabled\",\n      \"subscriptionPolicies\": {\n        \"locationPlacementId\": \"<string>\",\n        \"quotaId\": \"<string>\",\n        \"spendingLimit\": \"CurrentPeriodOff\"\n      },\n      \"authorizationSource\": \"<string>\",\n      \"managedByTenants\": [\n        {\n          \"tenantId\": \"<string>\"\n        },\n        {\n          \"tenantId\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:19:30.000Z",
+              "updatedAt": "2026-07-28T01:19:30.000Z",
+              "uid": "35240-3b98d1b9-8e78-423b-b3b2-f6e27ddd9115"
+            }
+          ],
+          "createdAt": "2026-07-28T01:19:30.000Z",
+          "updatedAt": "2026-07-28T01:19:30.000Z",
+          "uid": "35240-36a3073f-e4b1-45a4-bb7b-4ca5f31f69e3"
+        }
+      ],
+      "id": "ec9f11af-16ef-40af-a97b-88b1df27504e",
+      "createdAt": "2026-07-28T01:19:30.000Z",
+      "updatedAt": "2026-07-28T01:19:30.000Z",
+      "uid": "35240-ec9f11af-16ef-40af-a97b-88b1df27504e"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://management.azure.com"
+    }
+  ]
+}

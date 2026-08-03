@@ -1,0 +1,171 @@
+{
+  "info": {
+    "_postman_id": "fae01c48-41bf-470f-bdb4-638fb1a1b7f9",
+    "name": "Microsoft Azure Management Resource Groups Resources API",
+    "description": "Core Microsoft Azure Resource Manager REST API for subscription, resource group, and resource management across all Azure services.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:19:29.000Z",
+    "updatedAt": "2026-07-28T01:19:29.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-fae01c48-41bf-470f-bdb4-638fb1a1b7f9"
+  },
+  "item": [
+    {
+      "name": "subscriptions",
+      "item": [
+        {
+          "name": "{subscriptionId}",
+          "item": [
+            {
+              "name": "resources",
+              "item": [
+                {
+                  "name": "Microsoft Azure Azure Management List Resources by Subscription",
+                  "id": "2f857f69-d1d9-4c2e-8d29-83384cd3f9a5",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resources?api-version=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "subscriptions",
+                        ":subscriptionId",
+                        "resources"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "74d494d3-0bb7-4ea4-99e8-ba07b075bb83",
+                          "key": "subscriptionId",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Get all the resources in a subscription."
+                  },
+                  "response": [
+                    {
+                      "id": "3fb64262-bed5-4285-a94f-e24d55b83592",
+                      "name": "List of resources",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resources?api-version=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "subscriptions",
+                            ":subscriptionId",
+                            "resources"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "subscriptionId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"location\": \"<string>\",\n      \"tags\": {\n        \"laboris_a_\": \"<string>\",\n        \"irure4a\": \"<string>\",\n        \"fugiat_d\": \"<string>\"\n      },\n      \"kind\": \"<string>\",\n      \"managedBy\": \"<string>\",\n      \"sku\": {\n        \"name\": \"<string>\",\n        \"tier\": \"<string>\",\n        \"capacity\": \"<integer>\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"location\": \"<string>\",\n      \"tags\": {\n        \"velit__3\": \"<string>\"\n      },\n      \"kind\": \"<string>\",\n      \"managedBy\": \"<string>\",\n      \"sku\": {\n        \"name\": \"<string>\",\n        \"tier\": \"<string>\",\n        \"capacity\": \"<integer>\"\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T01:19:29.000Z",
+                      "updatedAt": "2026-07-28T01:19:29.000Z",
+                      "uid": "35240-3fb64262-bed5-4285-a94f-e24d55b83592"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:19:29.000Z",
+                  "updatedAt": "2026-07-28T01:19:29.000Z",
+                  "uid": "35240-2f857f69-d1d9-4c2e-8d29-83384cd3f9a5"
+                }
+              ],
+              "id": "d407c1d6-b4b9-440e-8ab3-d7bc6c28dec8",
+              "createdAt": "2026-07-28T01:19:29.000Z",
+              "updatedAt": "2026-07-28T01:19:29.000Z",
+              "uid": "35240-d407c1d6-b4b9-440e-8ab3-d7bc6c28dec8"
+            }
+          ],
+          "id": "e630f4ab-c8f2-4f56-864b-cc9e44bcf30c",
+          "createdAt": "2026-07-28T01:19:29.000Z",
+          "updatedAt": "2026-07-28T01:19:29.000Z",
+          "uid": "35240-e630f4ab-c8f2-4f56-864b-cc9e44bcf30c"
+        }
+      ],
+      "id": "c9ddef4a-ab2f-4e17-9ea9-be376b68ac61",
+      "createdAt": "2026-07-28T01:19:29.000Z",
+      "updatedAt": "2026-07-28T01:19:29.000Z",
+      "uid": "35240-c9ddef4a-ab2f-4e17-9ea9-be376b68ac61"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://management.azure.com"
+    }
+  ]
+}

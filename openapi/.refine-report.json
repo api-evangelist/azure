@@ -1,0 +1,18 @@
+{
+  "provider": "azure",
+  "sources": [
+    "azure-resource-groups-api-openapi.yml",
+    "azure-resources-api-openapi.yml",
+    "azure-subscriptions-api-openapi.yml"
+  ],
+  "outputs": [
+    "azure-resource-groups-api-openapi.yml",
+    "azure-resources-api-openapi.yml",
+    "azure-subscriptions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
