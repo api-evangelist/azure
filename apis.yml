@@ -42,12 +42,6 @@ apis:
     url: openapi/azure-resource-groups-api-openapi.yml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/compute/
-  - type: X-NaftikoCapability
-    url: capabilities/management-resource-groups.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/management-resources.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/management-subscriptions.yaml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/storageservices/
   - type: Documentation
@@ -64,12 +58,6 @@ apis:
     url: openapi/azure-resources-api-openapi.yml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/compute/
-  - type: X-NaftikoCapability
-    url: capabilities/management-resource-groups.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/management-resources.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/management-subscriptions.yaml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/storageservices/
   - type: Documentation
@@ -86,12 +74,6 @@ apis:
     url: openapi/azure-subscriptions-api-openapi.yml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/compute/
-  - type: X-NaftikoCapability
-    url: capabilities/management-resource-groups.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/management-resources.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/management-subscriptions.yaml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/storageservices/
   - type: Documentation
