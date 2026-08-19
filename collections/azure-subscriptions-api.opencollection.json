@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Microsoft Azure Management Resource Groups Subscriptions API",
+    "version": "2022-09-01"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "credentials": {
+        "clientId": "{{clientId}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Subscriptions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Microsoft Azure Azure Management List Subscriptions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://management.azure.com/subscriptions",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "2022-09-01",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets all subscriptions for a tenant."
+        },
+        {
+          "info": {
+            "name": "Microsoft Azure Azure Management Get Subscription Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://management.azure.com/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path"
+              },
+              {
+                "name": "api-version",
+                "value": "2022-09-01",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets details about a specified subscription."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

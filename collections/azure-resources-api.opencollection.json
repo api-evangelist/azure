@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Microsoft Azure Management Resource Groups Resources API",
+    "version": "2022-09-01"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "credentials": {
+        "clientId": "{{clientId}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Resources",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Microsoft Azure Azure Management List Resources by Subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://management.azure.com/subscriptions/:subscriptionId/resources",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path"
+              },
+              {
+                "name": "api-version",
+                "value": "2022-09-01",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get all the resources in a subscription."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
