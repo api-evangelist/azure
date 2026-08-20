@@ -21,6 +21,14 @@ tags:
 - Cloud Computing
 - Databases
 - Infrastructure
+- Machine-Learning
+- Networking
+- Platform-as-a-Service
+- Storage
+tags_raw:
+- Cloud Computing
+- Databases
+- Infrastructure
 - Machine Learning
 - Networking
 - Platform as a Service
@@ -68,6 +76,8 @@ apis:
   humanURL: https://azure.microsoft.com/en-us/products/category/compute
   baseURL: https://management.azure.com
   tags:
+  - Subscription
+  tags_raw:
   - Subscriptions
   properties:
   - type: OpenAPI
