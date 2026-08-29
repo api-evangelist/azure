@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Microsoft Azure Management Resource Groups API
   description: Core Microsoft Azure Resource Manager REST API for subscription, resource group, and resource management across all Azure services.

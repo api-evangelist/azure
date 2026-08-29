@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Microsoft Azure Management Resource Groups Subscriptions API
   description: Core Microsoft Azure Resource Manager REST API for subscription, resource group, and resource management across all Azure services.
@@ -86,15 +86,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    SubscriptionListResult:
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/Subscription'
-        nextLink:
-          type: string
     Subscription:
       type: object
       description: Subscription information.
@@ -137,6 +128,15 @@ components:
             properties:
               tenantId:
                 type: string
+    SubscriptionListResult:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Subscription'
+        nextLink:
+          type: string
   securitySchemes:
     azure_auth:
       type: oauth2
